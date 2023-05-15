@@ -5,7 +5,9 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <StockCarouselContainer />
+      <div className="page-content-container">
+        <StockCarouselContainer />
+      </div>
     </div>
   );
 }

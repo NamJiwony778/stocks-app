@@ -1,28 +1,47 @@
 import React from "react";
+import { v4 as uuidv4 } from "uuid";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import { useGetStockQuoteQuery } from "../../redux/apiSlice";
+import { useGetStockScreenerQuery } from "../../redux/apiSlice";
+import StocksCarouselElement from "../stocks-carousel-element/stocks-carousel-element";
+import Loading from "../loading/loading";
+import ErrorMessage from "../error/error-message";
 
 const StockCarouselContainer = (props) => {
   const {
-    data: stockQuoteData,
+    data: stockScreenerData,
     isLoading,
     isError,
     error,
-  } = useGetStockQuoteQuery();
-  console.log("data", stockQuoteData);
+  } = useGetStockScreenerQuery();
+
   const responsive = {
     superLargeDesktop: {
-      // the naming can be any, depends on you.
       breakpoint: { max: 4000, min: 3000 },
-      items: 5,
+      items: 8,
+    },
+    desktop_: {
+      breakpoint: { max: 3000, min: 1800 },
+      items: 7,
     },
     desktop: {
-      breakpoint: { max: 3000, min: 1024 },
+      breakpoint: { max: 1800, min: 1300 },
+      items: 6,
+    },
+    small_desktop: {
+      breakpoint: { max: 1300, min: 1024 },
+      items: 5,
+    },
+    smaller_desktop: {
+      breakpoint: { max: 1024, min: 900 },
+      items: 4,
+    },
+    tablet_big: {
+      breakpoint: { max: 900, min: 700 },
       items: 3,
     },
     tablet: {
-      breakpoint: { max: 1024, min: 464 },
+      breakpoint: { max: 700, min: 464 },
       items: 2,
     },
     mobile: {
@@ -30,13 +49,24 @@ const StockCarouselContainer = (props) => {
       items: 1,
     },
   };
-  return (
-    <Carousel responsive={responsive}>
-      <div>Item 1</div>
-      <div>Item 2</div>
-      <div>Item 3</div>
-      <div>Item 4</div>
-    </Carousel>
-  );
+
+  if (isLoading) {
+    return <Loading />;
+  }
+
+  if (isError) {
+    return <ErrorMessage error={error} />;
+  }
+
+  if (stockScreenerData && stockScreenerData.length > 0) {
+    return (
+      <Carousel responsive={responsive} className="stocks-carousel-container">
+        {stockScreenerData.map((el) => (
+          <StocksCarouselElement data={el} key={uuidv4()} />
+        ))}
+      </Carousel>
+    );
+  }
 };
+
 export default StockCarouselContainer;

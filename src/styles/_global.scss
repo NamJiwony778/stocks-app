@@ -5,4 +5,12 @@ body {
   margin: 0;
   font-family: "Objective", "Arial";
   background-color: #e9e1ff;
+  .page-content-container {
+    padding-left: 32px;
+    padding-right: 32px;
+    .loading-message-container {
+      display: flex;
+      justify-content: center;
+    }
+  }
 }
