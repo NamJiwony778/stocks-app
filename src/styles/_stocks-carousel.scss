@@ -22,16 +22,6 @@
     div {
       display: flex;
       justify-content: space-between;
-      .title {
-        font-weight: $bold-text-weight;
-      }
-      .text {
-        color: $text-color;
-      }
-      span {
-        font-size: $text-size;
-        font-weight: $text-weight;
-      }
     }
     @media (min-width: 462px) {
       max-width: 155px;

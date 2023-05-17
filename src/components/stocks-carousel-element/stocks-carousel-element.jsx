@@ -7,7 +7,7 @@ const StocksCarouselElement = (props) => {
   return (
     <div className="carousel-element-container">
       <div>
-        <span className="title">{companyName}</span>
+        <span className="bold-text">{companyName}</span>
         <span>{symbol}</span>
       </div>
       <div>

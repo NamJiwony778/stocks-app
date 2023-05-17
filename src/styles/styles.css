@@ -23,9 +23,22 @@ body .page-content-container {
   padding-left: 32px;
   padding-right: 32px;
 }
+body .page-content-container .row {
+  margin-top: 20px;
+}
 body .page-content-container .loading-message-container {
   display: flex;
   justify-content: center;
+}
+body .page-content-container .text {
+  color: #838383;
+}
+body .page-content-container span {
+  font-size: 12px;
+  font-weight: 400;
+}
+body .page-content-container .bold-text {
+  font-weight: 500;
 }
 
 .header-container {
@@ -73,16 +86,6 @@ body .page-content-container .loading-message-container {
   display: flex;
   justify-content: space-between;
 }
-.stocks-carousel-container .carousel-element-container div .title {
-  font-weight: 500;
-}
-.stocks-carousel-container .carousel-element-container div .text {
-  color: #838383;
-}
-.stocks-carousel-container .carousel-element-container div span {
-  font-size: 12px;
-  font-weight: 400;
-}
 @media (min-width: 462px) {
   .stocks-carousel-container .carousel-element-container {
     max-width: 155px;
@@ -126,5 +129,75 @@ body .page-content-container .loading-message-container {
 @media (min-width: 900px) {
   .stocks-carousel-container {
     padding: 12px;
+  }
+}
+
+.stocks-slider-container {
+  background-color: #ffffff;
+  border-radius: 8px;
+  width: 30%;
+  padding: 20px 12px;
+}
+.stocks-slider-container .quote-row-info {
+  display: flex;
+  flex-direction: column;
+}
+.stocks-slider-container .quote-row-info div {
+  display: flex;
+  align-items: center;
+}
+.stocks-slider-container .quote-row-info div .logo {
+  width: 24px;
+}
+.stocks-slider-container .quote-row-info div .company-name {
+  margin-left: 6px;
+}
+.stocks-slider-container .quote-row-info .quote-row-align-right {
+  margin-top: 12px;
+  width: 30%;
+  display: flex;
+  justify-content: flex-start;
+}
+.stocks-slider-container .quote-row-info .quote-row-align-right .green {
+  color: #77b900;
+  margin-left: 5px;
+}
+.stocks-slider-container .quote-row {
+  display: flex;
+  flex-direction: column;
+  margin-top: 12px;
+}
+.stocks-slider-container .quote-row .general-info {
+  margin-top: 10px;
+}
+.stocks-slider-container .slider {
+  margin-top: 25px;
+}
+.stocks-slider-container .info-row {
+  padding-top: 10px;
+}
+@media (min-width: 700px) {
+  .stocks-slider-container .quote-row-info {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .stocks-slider-container .quote-row-info .quote-row-align-right {
+    flex-direction: column;
+    justify-content: flex-end;
+    width: auto;
+    margin-top: 0;
+  }
+  .stocks-slider-container .quote-row-info .quote-row-align-right .green {
+    margin-top: 0;
+  }
+  .stocks-slider-container .quote-row {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .stocks-slider-container .quote-row .general-info {
+    margin-top: 0;
+  }
+  .stocks-slider-container .slider {
+    margin-top: 10px;
   }
 }

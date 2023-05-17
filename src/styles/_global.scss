@@ -8,9 +8,22 @@ body {
   .page-content-container {
     padding-left: 32px;
     padding-right: 32px;
+    .row {
+      margin-top: 20px;
+    }
     .loading-message-container {
       display: flex;
       justify-content: center;
+    }
+    .text {
+      color: $text-color;
+    }
+    span {
+      font-size: $text-size;
+      font-weight: $text-weight;
+    }
+    .bold-text {
+      font-weight: $bold-text-weight;
     }
   }
 }
