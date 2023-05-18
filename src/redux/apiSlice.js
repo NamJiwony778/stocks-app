@@ -13,7 +13,20 @@ export const dataApi = createApi({
     getCompanyOutlook: builder.query({
       query: () => `profile/GOOGL?apikey=${process.env.REACT_APP_API_KEY}`,
     }),
+    getMarketCapitalization: builder.query({
+      query: () =>
+        `historical-market-capitalization/AAPL?limit=100&apikey=${process.env.REACT_APP_API_KEY}`,
+    }),
+    getStockPriceChange: builder.query({
+      query: () =>
+        `stock-price-change/AAPL,FB,MSFT,MMM?apikey=${process.env.REACT_APP_API_KEY}`,
+    }),
   }),
 });
 
-export const { useGetStockScreenerQuery, useGetCompanyOutlookQuery } = dataApi;
+export const {
+  useGetStockScreenerQuery,
+  useGetCompanyOutlookQuery,
+  useGetStockPriceChangeQuery,
+  useGetMarketCapitalizationQuery,
+} = dataApi;

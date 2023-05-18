@@ -25,6 +25,9 @@ body .page-content-container {
 }
 body .page-content-container .row {
   margin-top: 20px;
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
 }
 body .page-content-container .loading-message-container {
   display: flex;
@@ -39,6 +42,20 @@ body .page-content-container span {
 }
 body .page-content-container .bold-text {
   font-weight: 500;
+}
+body .page-content-container .card-container {
+  background-color: #ffffff;
+  border-radius: 8px;
+  width: 100%;
+  padding: 20px 12px;
+}
+@media (min-width: 600px) {
+  body .page-content-container .card-container {
+    width: 50%;
+  }
+  body .page-content-container .row {
+    flex-direction: row;
+  }
 }
 
 .header-container {
@@ -132,72 +149,73 @@ body .page-content-container .bold-text {
   }
 }
 
-.stocks-slider-container {
-  background-color: #ffffff;
-  border-radius: 8px;
-  width: 30%;
-  padding: 20px 12px;
-}
-.stocks-slider-container .quote-row-info {
+.quote-row-info {
   display: flex;
   flex-direction: column;
 }
-.stocks-slider-container .quote-row-info div {
+.quote-row-info div {
   display: flex;
   align-items: center;
 }
-.stocks-slider-container .quote-row-info div .logo {
+.quote-row-info div .logo {
   width: 24px;
 }
-.stocks-slider-container .quote-row-info div .company-name {
+.quote-row-info div .company-name {
   margin-left: 6px;
 }
-.stocks-slider-container .quote-row-info .quote-row-align-right {
+.quote-row-info .quote-row-align-right {
   margin-top: 12px;
   width: 30%;
   display: flex;
   justify-content: flex-start;
 }
-.stocks-slider-container .quote-row-info .quote-row-align-right .green {
+.quote-row-info .quote-row-align-right .green {
   color: #77b900;
   margin-left: 5px;
 }
-.stocks-slider-container .quote-row {
+
+.quote-row {
   display: flex;
   flex-direction: column;
   margin-top: 12px;
 }
-.stocks-slider-container .quote-row .general-info {
+.quote-row .general-info {
   margin-top: 10px;
 }
-.stocks-slider-container .slider {
+
+.slider {
   margin-top: 25px;
 }
-.stocks-slider-container .info-row {
+
+.info-row {
   padding-top: 10px;
 }
+
 @media (min-width: 700px) {
-  .stocks-slider-container .quote-row-info {
+  .quote-row-info {
     flex-direction: row;
     justify-content: space-between;
   }
-  .stocks-slider-container .quote-row-info .quote-row-align-right {
+  .quote-row-info .quote-row-align-right {
     flex-direction: column;
     justify-content: flex-end;
     width: auto;
     margin-top: 0;
   }
-  .stocks-slider-container .quote-row-info .quote-row-align-right .green {
+  .quote-row-info .quote-row-align-right .green {
     margin-top: 0;
   }
-  .stocks-slider-container .quote-row {
+  .quote-row {
     flex-direction: row;
     justify-content: space-between;
   }
-  .stocks-slider-container .quote-row .general-info {
+  .quote-row .general-info {
     margin-top: 0;
   }
-  .stocks-slider-container .slider {
+  .slider {
     margin-top: 10px;
   }
+}
+.chart-container {
+  width: 100%;
 }

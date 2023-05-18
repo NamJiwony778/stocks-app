@@ -10,6 +10,9 @@ body {
     padding-right: 32px;
     .row {
       margin-top: 20px;
+      display: flex;
+      gap: 20px;
+      flex-direction: column;
     }
     .loading-message-container {
       display: flex;
@@ -24,6 +27,20 @@ body {
     }
     .bold-text {
       font-weight: $bold-text-weight;
+    }
+    .card-container {
+      background-color: $background-color;
+      border-radius: $border-radius;
+      width: 100%;
+      padding: 20px 12px;
+    }
+    @media (min-width: 600px) {
+      .card-container {
+        width: 50%;
+      }
+      .row {
+        flex-direction: row;
+      }
     }
   }
 }

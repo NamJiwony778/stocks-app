@@ -1,4 +1,5 @@
 import React from "react";
+import { v4 as uuidv4 } from "uuid";
 import Box from "@mui/material/Box";
 import Slider from "@mui/material/Slider";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
@@ -51,7 +52,7 @@ const StocksSlider = () => {
 
   if (companyOutlookData && companyOutlookData.length > 0) {
     return (
-      <div className="stocks-slider-container">
+      <div className="card-container">
         <p className="text">Top Stock</p>
         {companyOutlookData.map((el) => (
           <div>
