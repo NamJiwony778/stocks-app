@@ -15,8 +15,6 @@ const StockCarouselContainer = (props) => {
     error,
   } = useGetStockScreenerQuery();
 
-  console.log("stockScreenerData", stockScreenerData);
-
   const responsive = {
     superLargeDesktop: {
       breakpoint: { max: 4000, min: 3000 },
