@@ -52,10 +52,10 @@ const StocksSlider = () => {
 
   if (companyOutlookData && companyOutlookData.length > 0) {
     return (
-      <div className="card-container">
+      <div className="card-container fixed-container">
         <p className="text">Top Stock</p>
         {companyOutlookData.map((el) => (
-          <div>
+          <div key={uuidv4()}>
             <div className="quote-row-info">
               <div>
                 <img src={el.image} alt="google logo" className="logo" />

@@ -21,8 +21,6 @@ const MarketCapitalizationChart = () => {
     error,
   } = useGetMarketCapitalizationQuery();
 
-  console.log("marketCapitalizationData", marketCapitalizationData);
-
   if (isLoading) {
     return <Loading />;
   }
@@ -33,7 +31,7 @@ const MarketCapitalizationChart = () => {
 
   if (marketCapitalizationData && marketCapitalizationData.length > 0) {
     return (
-      <div className="card-container">
+      <div className="card-container fixed-container">
         <ResponsiveContainer width="100%" height="100%">
           <AreaChart
             width={500}
@@ -52,7 +50,6 @@ const MarketCapitalizationChart = () => {
               fill="black"
               textAnchor="middle"
               dominantBaseline="central"
-              wordBreak="break-all"
             >
               <tspan fontSize="12">Market Capitalization</tspan>
             </text>

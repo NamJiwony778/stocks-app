@@ -17,10 +17,14 @@ export const dataApi = createApi({
       query: () =>
         `historical-market-capitalization/AAPL?limit=100&apikey=${process.env.REACT_APP_API_KEY}`,
     }),
-    getStockPriceChange: builder.query({
+    getStockSymbol: builder.query({
       query: () =>
-        `stock-price-change/AAPL,FB,MSFT,MMM?apikey=${process.env.REACT_APP_API_KEY}`,
+        `/stock_market/gainers?apikey=${process.env.REACT_APP_API_KEY}`,
     }),
+    // getStockPriceChange: builder.query({
+    //   query: () =>
+    //     `stock-price-change/AAPL,FB,MSFT,MMM?apikey=${process.env.REACT_APP_API_KEY}`,
+    // }),
   }),
 });
 
@@ -29,4 +33,5 @@ export const {
   useGetCompanyOutlookQuery,
   useGetStockPriceChangeQuery,
   useGetMarketCapitalizationQuery,
+  useGetStockSymbolQuery,
 } = dataApi;

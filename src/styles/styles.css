@@ -53,8 +53,14 @@ body .page-content-container .card-container {
   body .page-content-container .card-container {
     width: 50%;
   }
+  body .page-content-container .fixed-container {
+    max-height: 210px;
+  }
+}
+@media (min-width: 800px) {
   body .page-content-container .row {
     flex-direction: row;
+    justify-content: center;
   }
 }
 
@@ -218,4 +224,35 @@ body .page-content-container .card-container {
 }
 .chart-container {
   width: 100%;
+}
+
+.selector-container {
+  display: flex;
+  gap: 10%;
+}
+.selector-container .label {
+  font-size: 14px;
+}
+
+.social-media-container {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 12px;
+}
+
+.table-container {
+  display: flex;
+  justify-content: center;
+  width: 25%;
+}
+
+.rec-container {
+  margin-top: 10px;
+}
+.rec-container .rec {
+  display: flex;
+}
+.rec-container .rec span {
+  font-size: 12px;
+  padding: 10px;
 }

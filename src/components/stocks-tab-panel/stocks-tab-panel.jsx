@@ -14,7 +14,7 @@ import Box from "@mui/material/Box";
 
 const StocksTabPanel = (props) => {
   const { children, value, index, data, ...other } = props;
-  console.log("d", Object.keys(data));
+
   return (
     <div
       role="tabpanel"
