@@ -14,12 +14,13 @@ const TimeWindow = (props) => {
   const { stockSymbol } = props;
   const dispatch = useDispatch();
 
-  //stock symbol is required
-  if (stockSymbol && stockSymbol.length > 0) {
-    dispatch(generateStockData(timeRange));
-  } else {
-    dispatch(generateStockData(0));
-  }
+  useEffect(() => {
+    if (stockSymbol && stockSymbol.length > 0) {
+      dispatch(generateStockData(timeRange));
+    } else {
+      dispatch(generateStockData(0));
+    }
+  });
 
   const handleChange = (event) => {
     setTimeRange(event.target.value);

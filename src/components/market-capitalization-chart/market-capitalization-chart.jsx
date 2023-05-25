@@ -45,13 +45,15 @@ const MarketCapitalizationChart = () => {
             }}
           >
             <text
-              x={500 / 2}
-              y={20}
+              x={350 / 2}
+              y={6}
               fill="black"
               textAnchor="middle"
               dominantBaseline="central"
             >
-              <tspan fontSize="12">Market Capitalization</tspan>
+              <tspan fontSize="12" className="chart-title">
+                Market Capitalization
+              </tspan>
             </text>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="date" tick={{ fontSize: 10 }} />

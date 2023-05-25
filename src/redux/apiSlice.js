@@ -28,7 +28,7 @@ export const dataApi = createApi({
     }),
     getStockPriceChange: builder.query({
       query: () =>
-        `stock-price-change/AAPL,FB,MSFT,MMM?apikey=${process.env.REACT_APP_API_KEY}`,
+        `https://financialmodelingprep.com/api/v3/rss_feed?page=0&limit=5&apikey=${process.env.REACT_APP_API_KEY}`,
     }),
   }),
 });

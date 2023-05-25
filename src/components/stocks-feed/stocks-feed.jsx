@@ -10,9 +10,9 @@ import Loading from "../loading/loading";
 import ErrorMessage from "../error/error-message";
 import "../../styles/styles.scss";
 
-const StocksCharts = () => {
+const StocksFeed = () => {
   const {
-    data: stockPriceChangeData,
+    data: stockFeedData,
     isLoading,
     isError,
     error,
@@ -70,9 +70,9 @@ const StocksCharts = () => {
     })
   );
 
-  if (stockPriceChangeData && stockPriceChangeData.length > 0) {
+  if (stockFeedData && stockFeedData.length > 0) {
     return (
-      <div className="card-container">
+      <div className="card-container fixed-container">
         <Box sx={{ width: "100%" }}>
           <Box sx={{ bgcolor: "#ffffff" }}>
             <StyledTabs
@@ -80,8 +80,8 @@ const StocksCharts = () => {
               onChange={handleChange}
               aria-label="styled tabs"
             >
-              {stockPriceChangeData.map((el) => (
-                <StyledTab label={el.symbol} key={uuidv4()} />
+              {stockFeedData.map((el) => (
+                <StyledTab label={el.ticker} key={uuidv4()} />
               ))}
             </StyledTabs>
             <Box sx={{ p: 3 }} />
@@ -89,7 +89,7 @@ const StocksCharts = () => {
           <StocksTabPanel
             value={value}
             index={value}
-            data={stockPriceChangeData[value]}
+            data={stockFeedData[value]}
           />
         </Box>
       </div>
@@ -97,4 +97,4 @@ const StocksCharts = () => {
   }
 };
 
-export default StocksCharts;
+export default StocksFeed;

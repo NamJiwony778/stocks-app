@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { v4 as uuidv4 } from "uuid";
 import { useGetStockSymbolQuery } from "../../redux/apiSlice";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
@@ -42,12 +42,6 @@ const StockSymbolInput = (props) => {
   const dispatch = useDispatch();
   const data = useSelector(selectData);
   console.log("selector", data);
-  // useEffect(() => {
-  //   if (data) {
-  //     generateSocialCount();
-  //     generateStockData(data.length);
-  //   }
-  // }, [dispatch, data]);
 
   const handleChange = (event) => {
     setStockSymbol(event.target.value);

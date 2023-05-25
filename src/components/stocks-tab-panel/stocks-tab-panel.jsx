@@ -1,16 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import {
-  LineChart,
-  Line,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend,
-  ResponsiveContainer,
-} from "recharts";
-import Box from "@mui/material/Box";
 
 const StocksTabPanel = (props) => {
   const { children, value, index, data, ...other } = props;
@@ -23,36 +12,25 @@ const StocksTabPanel = (props) => {
       aria-labelledby={`simple-tab-${index}`}
       {...other}
     >
+      <span className="text">Stock feed</span>
       {value === index && (
-        <Box sx={{ p: 3 }}>
-          <ResponsiveContainer width="100%" height="100%">
-            <LineChart
-              width={500}
-              height={300}
-              data={data}
-              margin={{
-                top: 5,
-                right: 30,
-                left: 20,
-                bottom: 5,
-              }}
-            >
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey={data} />
-              <YAxis />
-              <Tooltip />
-              <Legend />
-              <Line
-                type="monotone"
-                dataKey={Object.keys(data)}
-                stroke="#8884d8"
-                activeDot={{ r: 8 }}
-              />
-              {/* <Line type="monotone" dataKey={data.max} stroke="#82ca9d" /> */}
-            </LineChart>
-          </ResponsiveContainer>
-          {/* {data.max} */}
-        </Box>
+        <div className="info-row">
+          <span>{data.title}</span>
+          <br />
+          <span>
+            <a className="link" href={data.link}>
+              Link
+            </a>
+          </span>
+          <div className="info-row">
+            <span className="text">CIK: </span>
+            <span>{data.cik}</span>
+          </div>
+          <div className="info-row">
+            <span className="text">Form Type: </span>
+            <span>{data.form_type}</span>
+          </div>
+        </div>
       )}
     </div>
   );

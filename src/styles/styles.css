@@ -49,9 +49,18 @@ body .page-content-container .card-container {
   width: 100%;
   padding: 20px 12px;
 }
+body .page-content-container .card-container .chart-title {
+  color: red;
+}
+body .page-content-container .link {
+  color: #a6f7e2;
+}
+body .page-content-container .info-row {
+  padding-top: 10px;
+}
 @media (min-width: 600px) {
   body .page-content-container .card-container {
-    width: 50%;
+    width: 100%;
   }
   body .page-content-container .fixed-container {
     max-height: 210px;
@@ -61,6 +70,14 @@ body .page-content-container .card-container {
   body .page-content-container .row {
     flex-direction: row;
     justify-content: center;
+  }
+  body .page-content-container .long-row .card-container {
+    width: 30%;
+  }
+}
+@media (min-width: 1230px) {
+  body .page-content-container .long-row .card-container {
+    width: 100%;
   }
 }
 
@@ -191,10 +208,6 @@ body .page-content-container .card-container {
 
 .slider {
   margin-top: 25px;
-}
-
-.info-row {
-  padding-top: 10px;
 }
 
 @media (min-width: 700px) {

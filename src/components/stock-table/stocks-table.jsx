@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -21,9 +21,12 @@ const StockTable = () => {
 
   const dispatch = useDispatch();
 
-  if (data.length > 0) {
-    dispatch(generateRecommendation(data));
-  }
+  useEffect(() => {
+    if (data.length > 0) {
+      dispatch(generateRecommendation(data));
+    }
+  });
+
   const recommendation = useSelector(selectRecommendation);
   const socialPostsRecommendation = useSelector(
     selectSocialPostsRecommendation

@@ -4,7 +4,7 @@ import StocksSlider from "./components/stocks-slider/stocks-slider";
 import MarketCapitalizationChart from "./components/market-capitalization-chart/market-capitalization-chart";
 import StockTableContainer from "./components/stock-table-container/stock-table-container";
 import NewsContainer from "./components/news-container/news-container";
-import StocksCharts from "./components/stocks-charts/stocks-charts";
+import StocksFeed from "./components/stocks-feed/stocks-feed";
 
 function App() {
   return (
@@ -12,14 +12,14 @@ function App() {
       <Header />
       <div className="page-content-container">
         <StockCarouselContainer />
-        <div className="row">
+        <div className="row long-row">
           <StocksSlider />
           <MarketCapitalizationChart />
-          <StockTableContainer />
+          <StocksFeed />
         </div>
         <div className="row">
           <NewsContainer />
-          <StocksCharts />
+          <StockTableContainer />
         </div>
       </div>
     </div>
