@@ -78,7 +78,9 @@ const StockTable = () => {
         </div>
       </div>
     </>
-  ) : null;
+  ) : (
+    <span>Choose stock symbol and date to get recomendation</span>
+  );
 };
 
 export default StockTable;

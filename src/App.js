@@ -5,6 +5,7 @@ import MarketCapitalizationChart from "./components/market-capitalization-chart/
 import StockTableContainer from "./components/stock-table-container/stock-table-container";
 import NewsContainer from "./components/news-container/news-container";
 import StocksFeed from "./components/stocks-feed/stocks-feed";
+import Footer from "./components/footer/footer";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <StockTableContainer />
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

@@ -269,3 +269,9 @@ body .page-content-container .info-row {
   font-size: 12px;
   padding: 10px;
 }
+
+.footer-container {
+  margin-top: 12px;
+  background-color: #b79bff;
+  height: 50px;
+}
