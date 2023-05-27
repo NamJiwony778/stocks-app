@@ -6,6 +6,12 @@ Stock Market Guru is a web application that contains stock market information. I
 
 [Link](https://stock-market-guru.vercel.app/) to the web app.
 
+## API
+[First API](https://financialmodelingprep.com)
+
+[Second API](https://finnhub.io)
+
+Free version of the APIs was used to create this app. 
 
 ## Technologies
 
