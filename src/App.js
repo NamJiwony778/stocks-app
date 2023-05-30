@@ -1,3 +1,6 @@
+"use client";
+import React from "react";
+import { ErrorBoundary } from "react-error-boundary";
 import Header from "./components/header/header";
 import StockCarouselContainer from "./components/stocks-carousel-container/stocks-carousel-container";
 import StocksSlider from "./components/stocks-slider/stocks-slider";
@@ -10,20 +13,30 @@ import Footer from "./components/footer/footer";
 function App() {
   return (
     <div className="App">
-      <Header />
+      <ErrorBoundary fallback={<div>Something went wrong</div>}>
+        <Header />
+      </ErrorBoundary>
       <div className="page-content-container">
-        <StockCarouselContainer />
+        <ErrorBoundary fallback={<div>Something went wrong</div>}>
+          <StockCarouselContainer />
+        </ErrorBoundary>
         <div className="row long-row">
-          <StocksSlider />
-          <MarketCapitalizationChart />
-          <StocksFeed />
+          <ErrorBoundary fallback={<div>Something went wrong</div>}>
+            <StocksSlider />
+            <MarketCapitalizationChart />
+            <StocksFeed />
+          </ErrorBoundary>
         </div>
         <div className="row">
-          <NewsContainer />
-          <StockTableContainer />
+          <ErrorBoundary fallback={<div>Something went wrong</div>}>
+            <NewsContainer />
+            <StockTableContainer />
+          </ErrorBoundary>
         </div>
       </div>
-      <Footer />
+      <ErrorBoundary fallback={<div>Something went wrong</div>}>
+        <Footer />
+      </ErrorBoundary>
     </div>
   );
 }
